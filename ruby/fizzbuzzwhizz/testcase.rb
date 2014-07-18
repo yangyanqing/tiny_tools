@@ -11,16 +11,14 @@ class TestFbwSay < Test::Unit::TestCase
     def teardown
     end
 
-    def test_Give_1_should_say_1
-        assert_equal('1', FbwSay(@specials, 1))
+    def self.define_test(expect, given)
+        define_method("test_Given_#{given.to_s}_should_say_#{expect}") {
+            assert_equal(expect, FbwSay(@specials, given)) 
+        } 
     end
 
-    def test_Give_3_should_say_Fizz
-        assert_equal('Fizz', FbwSay(@specials, 3))
-    end
-    
-    def test_Give_5_should_say_Buzz
-        assert_equal('Buzz', FbwSay(@specials, 5))
-    end
+    define_test('1', 1)
+    define_test('Fizz', 3)
+    define_test('Buzz', 5)
 end
 
