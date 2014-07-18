@@ -20,5 +20,6 @@ class TestFbwSay < Test::Unit::TestCase
     define_test('1', 1)
     define_test('Fizz', 3)
     define_test('Buzz', 5)
+    define_test('Whizz', 7)
 end
 
